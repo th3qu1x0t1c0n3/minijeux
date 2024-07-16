@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>MiniJeux</title>
+
+    <!-- Inclusion de jQuery -->
+    <script src="js/librairie/jquery-3.6.0.js"></script>
+
+    <!-- Balise meta pour un site "responsive" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Et de bootstrap -->
+    <script src="js/librairie/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/librairie/bootstrap.css">
+
+    <!-- Mes styles -->
+    <link rel="stylesheet" href="css/mesStyles.css">
+
+    <!-- Mes scripts -->
+    <script src="js/commun.js"></script>
+    <script src="js/gestionAbonnes.js"></script>
+    <script src="js/catalogue.js"></script>
+</head>
+<body class="bg-info">
+    <div class="container bg-light rounded mt-5">
+        <!-- Zone commune à toutes les pages : Jumbotron + Barre de menus -->
+        <div class="row">
+            <div id="enTete" class="col text-center text-white bg-dark p-5">
+                <h1>MiniJeux.com</h1>
+            </div>
+        </div>
+        <div class="row bg-dark">
+            <nav class="col-lg-8 col-md-5 col-sm-5 navbar navbar-expand-sm navbar-light pb-0 mt-2">
+                <ul class="navbar-nav">
+                    <li class="nav-item bg-white border">
+                        <a class="nav-link mb-2 font-weight-bold text-primary" href="./index.html">Page d'acceuille</a>
+                    </li>
+                    <li class="nav-item bg-light active rounded-top">
+                        <a class="nav-link font-weight-bold text-primary" href="./catalogue.html">catalogue</a>
+                    </li>
+                <!--<li class="nav-item active rounded-top" style="background-color: lightgray">
+                    <a class="nav-link nav-item active rounded-top font-weight-bold text-primary" href="./sauveQuiPeut.html">Sauve qui peut</a>
+                </li>-->
+                </ul>
+            </nav>
+            <div class="col-lg-4 col-md-6 col-sm-7 text-right mt-3" id="connexion">
+                <p class="d-inline-block text-white" id="utilisateur">Veuillez vous connecter</p>
+                <button class="d-inline-block bg-danger" id="btnDeco">Déconnexion</button>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="dlgErrModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="titre">Erreur</h5>
+                        <button type="button" class="btn btn-danger" id="sortieDlg" aria-label="Close"> x </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="msg">Message d'erreur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zone spécifique à la page courante -->
+        <div class="container" id="cata"></div>
+        <!--<div class="row mt-3" >
+            <div class="col-3 card p-0 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/sauveQuiPeut.png">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="sauveQuiPeut.html">Sauve qui peut!</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0 mr-5 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-3 card p-0 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0 mr-5 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3 card p-0 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0 mr-5 ml-5">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+            <div class="col-3 card p-0">
+                <img class="card-body p-0" alt="jeux de pong" src="./img/35828-posts.article_lg-200.jpg">
+                <div class="card-footer text-center">
+                    <a class="text-dark" href="enMaintenance.html">Pong</a>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Zone commune à toutes les pages : Pied de page -->
+        <div class="row">
+            <div class="col text-center border-top pt-2 mt-3">
+                <p>&copy; Louis-Philippe Forget, Cégep André-Laurendeau, Hiver 2022</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-4"></div>
+</body>
+</html>
