@@ -8,3 +8,9 @@ Noter que le site ne fonctionne pas complètement puisqu'il est fait en html, cs
 La fonctionnalité de connection n'est pas complétée, mais l'inscription fonctionne. La première et la dernière lettre du mot de passe doit être la même.
 
 
+Commencer le serveur:
+```python
+python -m http.server 8083
+```
+
+
