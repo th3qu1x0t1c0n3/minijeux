@@ -157,7 +157,7 @@ function valideUser() {
         return false;
     }
 
-    for (let i=0; i<nomUtilisateur.length; i++){
+    for (let i= 0; i < nomUtilisateur.length; i++){
         if ((nomUtilisateur.charAt(i) < 'a' || nomUtilisateur.charAt(i) > 'z') &&
             (nomUtilisateur.charAt(i) < 'A' || nomUtilisateur.charAt(i) > 'Z') &&
             !(nomUtilisateur.charAt(i) > 0 || nomUtilisateur.charAt(i) < 9)){
